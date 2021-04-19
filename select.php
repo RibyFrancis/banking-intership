@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>view</title>
+<title>select</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
-		--web-view-name: view;
-		--web-view-id: view;
+		--web-view-name: select;
+		--web-view-id: select;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
 	}
 	:root {
-		--web-view-ids: view;
+		--web-view-ids: select;
 	}
 	* {
 		margin: 0;
@@ -21,16 +21,17 @@
 		box-sizing: border-box;
 		border: none;
 	}
-	#view {
+	#select {
 		position: absolute;
 		width: 1920px;
 		height: 1080px;
-		background-color: rgba(0,0,0,1);
 		overflow: hidden;
-		--web-view-name: view;
-		--web-view-id: view;
+		cursor: pointer;
+		--web-view-name: select;
+		--web-view-id: select;
 		--web-scale-on-resize: true;
 		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
 	}
 	@keyframes fadein {
 	
@@ -42,131 +43,30 @@
 		}
 	
 	}
-	#Path_1 {
-		fill: rgba(155,180,69,1);
+	#Rectangle_8 {
+		filter: blur(15px);
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
 	}
-	.Path_1 {
-		overflow: visible;
+	.Rectangle_8 {
 		position: absolute;
-		width: 206px;
-		height: 55px;
-		left: 61px;
-		top: 754px;
-		transform: matrix(1,0,0,1,0,0);
-		cursor: pointer;
+		overflow: visible;
+		width: 1920px;
+		height: 1080px;
+		left: 0px;
+		top: 0px;
 		--web-animation: fadein 0.3s ease-out;
 		--web-action-type: page;
-		--web-action-target: success.html;
+		--web-action-target: home.html;
+		cursor: pointer;
 	}
-	#Rectangle_1 {
-		fill: transparent;
-		stroke: rgba(255,255,255,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Rectangle_1 {
-		position: absolute;
-		overflow: visible;
-		width: 604px;
-		height: 551px;
-		left: 1357px;
-		top: 288px;
-	}
-	#NEW_INDIA_BANK {
-		left: 54px;
-		top: 36px;
-		position: absolute;
-		overflow: visible;
-		width: 355px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 47px;
-		color: rgba(112,112,112,1);
-	}
-	#INDIAs_FAVOURITE_BANK {
-		left: 55px;
-		top: 102px;
-		position: absolute;
-		overflow: visible;
-		width: 354px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 18px;
-		color: rgba(155,180,69,1);
-		letter-spacing: 3.9px;
-		text-transform: uppercase;
-	}
-	#BENEFICIARY {
-		left: 770px;
-		top: 73px;
-		position: absolute;
-		overflow: visible;
-		width: 157px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 19px;
-		color: rgba(212,212,212,1);
-		letter-spacing: 2.45px;
-	}
-	#SETTINGS {
-		left: 1078px;
-		top: 73px;
-		position: absolute;
-		overflow: visible;
-		width: 116px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 19px;
-		color: rgba(212,212,212,1);
-		letter-spacing: 2.45px;
-	}
-	#ACCOUNT {
-		left: 1372px;
-		top: 73px;
-		position: absolute;
-		overflow: visible;
-		width: 115px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 19px;
-		color: rgba(212,212,212,1);
-		letter-spacing: 2.45px;
-	}
-	#LOGIN {
-		left: 1668px;
-		top: 73px;
-		position: absolute;
-		overflow: visible;
-		width: 75px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 19px;
-		color: rgba(212,212,212,1);
-		letter-spacing: 2.45px;
-	}
-	#Rectangle_2 {
-		fill: transparent;
+	#Rectangle_7 {
+		fill: rgba(255,255,255,1);
 		stroke: rgba(112,112,112,1);
 		stroke-width: 1px;
 		stroke-linejoin: miter;
@@ -174,321 +74,117 @@
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_2 {
+	.Rectangle_7 {
 		position: absolute;
 		overflow: visible;
-		width: 247px;
-		height: 55px;
-		left: 725px;
-		top: 59px;
+		width: 928px;
+		height: 638px;
+		left: 466px;
+		top: 207px;
 	}
-	#Rectangle_3 {
-		fill: transparent;
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Rectangle_3 {
+	#SELECT_AND_VIEW_CUSTOMER {
+		left: 674px;
+		top: 253px;
 		position: absolute;
 		overflow: visible;
-		width: 247px;
-		height: 55px;
-		left: 1012px;
-		top: 59px;
-	}
-	#Rectangle_4 {
-		fill: transparent;
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Rectangle_4 {
-		position: absolute;
-		overflow: visible;
-		width: 247px;
-		height: 55px;
-		left: 1306px;
-		top: 59px;
-	}
-	#Rectangle_5 {
-		fill: transparent;
-		stroke: rgba(112,112,112,1);
-		stroke-width: 1px;
-		stroke-linejoin: miter;
-		stroke-linecap: butt;
-		stroke-miterlimit: 4;
-		shape-rendering: auto;
-	}
-	.Rectangle_5 {
-		position: absolute;
-		overflow: visible;
-		width: 247px;
-		height: 55px;
-		left: 1591px;
-		top: 59px;
-	}
-	#CUSTOMER_NAME {
-		left: 61px;
-		top: 244px;
-		position: absolute;
-		overflow: visible;
-		width: 413px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 33px;
-		color: rgba(212,212,212,1);
-		letter-spacing: 3.9px;
-	}
-	#ASWIN_B {
-		left: 54px;
-		top: 274px;
-		position: absolute;
-		overflow: visible;
-		width: 407px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 96px;
-		color: rgba(155,180,69,1);
-		letter-spacing: -0.11px;
-	}
-	#LAST_5_TRANSACTIONS {
-		left: 1460px;
-		top: 369px;
-		position: absolute;
-		overflow: visible;
-		width: 399px;
+		width: 514px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Segoe UI;
 		font-style: normal;
 		font-weight: lighter;
 		font-size: 25px;
-		color: rgba(155,180,69,1);
-		letter-spacing: 3.16px;
-	}
-	#ZOMATO {
-		left: 1460px;
-		top: 487px;
-		position: absolute;
-		overflow: visible;
-		width: 101px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 18px;
-		color: rgba(255,255,255,1);
-		letter-spacing: 3.16px;
-	}
-	#UBER {
-		left: 1460px;
-		top: 543px;
-		position: absolute;
-		overflow: visible;
-		width: 60px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 18px;
-		color: rgba(255,255,255,1);
-		letter-spacing: 3.16px;
-	}
-	#MORE_SUPERMARKET {
-		left: 1460px;
-		top: 600px;
-		position: absolute;
-		overflow: visible;
-		width: 256px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 18px;
-		color: rgba(255,255,255,1);
-		letter-spacing: 3.16px;
-	}
-	#AMAZON {
-		left: 1460px;
-		top: 657px;
-		position: absolute;
-		overflow: visible;
-		width: 105px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 18px;
-		color: rgba(255,255,255,1);
-		letter-spacing: 3.16px;
-	}
-	#ZOMATO_ {
-		left: 1460px;
-		top: 713px;
-		position: absolute;
-		overflow: visible;
-		width: 101px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 18px;
-		color: rgba(255,255,255,1);
-		letter-spacing: 3.16px;
-	}
-	#ID152 {
-		left: 1820px;
-		top: 490px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		text-align: right;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 18px;
-		color: rgba(255,255,255,1);
-		letter-spacing: 3.16px;
-	}
-	#ID54 {
-		left: 1832px;
-		top: 543px;
-		position: absolute;
-		overflow: visible;
-		width: 26px;
-		white-space: nowrap;
-		text-align: right;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 18px;
-		color: rgba(255,255,255,1);
-		letter-spacing: 3.16px;
-	}
-	#ID102 {
-		left: 1820px;
-		top: 600px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		text-align: right;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 18px;
-		color: rgba(255,255,255,1);
-		letter-spacing: 3.16px;
-	}
-	#ID214 {
-		left: 1820px;
-		top: 657px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		text-align: right;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 18px;
-		color: rgba(255,255,255,1);
-		letter-spacing: 3.16px;
-	}
-	#ID124 {
-		left: 1820px;
-		top: 713px;
-		position: absolute;
-		overflow: visible;
-		width: 38px;
-		white-space: nowrap;
-		text-align: right;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 18px;
-		color: rgba(255,255,255,1);
-		letter-spacing: 3.16px;
-	}
-	#TRANSFER {
-		left: 106px;
-		top: 768px;
-		position: absolute;
-		overflow: visible;
-		width: 122px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 19px;
 		color: rgba(0,0,0,1);
-		letter-spacing: 2.45px;
+		letter-spacing: 3.16px;
 	}
-	#ACCOUNT_NUMBER {
-		left: 61px;
-		top: 432px;
-		position: absolute;
-		overflow: visible;
-		width: 448px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: lighter;
-		font-size: 33px;
-		color: rgba(212,212,212,1);
-		letter-spacing: 3.9px;
-	}
-	#ID1020333392 {
-		left: 54px;
-		top: 463px;
-		position: absolute;
-		overflow: visible;
-		width: 544px;
-		white-space: nowrap;
-		text-align: left;
-		font-family: Segoe UI;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 96px;
-		color: rgba(155,180,69,1);
-		letter-spacing: -0.11px;
-	}
-	#Rectangle_11 {
-		fill: transparent;
-		stroke: rgba(155,180,69,1);
+	#Rectangle_9 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(0,0,0,1);
 		stroke-width: 1px;
 		stroke-linejoin: miter;
 		stroke-linecap: butt;
 		stroke-miterlimit: 4;
 		shape-rendering: auto;
 	}
-	.Rectangle_11 {
+	.Rectangle_9 {
 		position: absolute;
 		overflow: visible;
-		width: 447px;
-		height: 71px;
-		left: 61px;
-		top: 654px;
+		width: 713px;
+		height: 86px;
+		left: 574px;
+		top: 483px;
+	}
+	#Line_1 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_1 {
+		overflow: visible;
+		position: absolute;
+		width: 24.707px;
+		height: 24.707px;
+		left: 1171.5px;
+		top: 516.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_2 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_2 {
+		overflow: visible;
+		position: absolute;
+		width: 28.651px;
+		height: 24.759px;
+		left: 1195.5px;
+		top: 516.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Rectangle_10 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_10 {
+		position: absolute;
+		overflow: visible;
+		width: 290px;
+		height: 80px;
+		left: 809px;
+		top: 688px;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: page;
+		--web-action-target: view.html;
+		cursor: pointer;
+	}
+	#VIEW {
+		left: 914px;
+		top: 712px;
+		position: absolute;
+		overflow: visible;
+		width: 82px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: lighter;
+		font-size: 25px;
+		color: rgba(0,0,0,1);
+		letter-spacing: 3.16px;
 	}
 </style>
 <script id="applicationScript">
@@ -3331,101 +3027,37 @@ window.application = new Application();
 </script>
 </head>
 <body>
-<div id="view">
-	<svg class="Path_1" viewBox="0 0 206 55">
-		<path onclick="application.showOverlay(event,'success',0,0)" id="Path_1" d="M 21 0 L 185 0 C 196.5979766845703 0 206 9.402019500732422 206 21 L 206 34 C 206 45.59798049926758 196.5979766845703 55 185 55 L 21 55 C 9.402019500732422 55 0 45.59798049926758 0 34 L 0 21 C 0 9.402019500732422 9.402019500732422 0 21 0 Z">
+<div id="select" onclick="application.goBack()">
+	<svg class="Rectangle_8">
+		<rect onclick="application.goToTargetView(event)" id="Rectangle_8" rx="0" ry="0" x="0" y="0" width="1920" height="1080">
+		</rect>
+	</svg>
+	<svg class="Rectangle_7">
+		<rect id="Rectangle_7" rx="44" ry="44" x="0" y="0" width="928" height="638">
+		</rect>
+	</svg>
+	<div id="SELECT_AND_VIEW_CUSTOMER">
+		<span>SELECT AND VIEW CUSTOMER</span>
+	</div>
+	<svg class="Rectangle_9">
+		<rect id="Rectangle_9" rx="34" ry="34" x="0" y="0" width="713" height="86">
+		</rect>
+	</svg>
+	<svg class="Line_1" viewBox="0 0 24 24">
+		<path id="Line_1" d="M 0 0 L 24 24">
 		</path>
 	</svg>
-	<svg class="Rectangle_1">
-		<rect id="Rectangle_1" rx="36" ry="36" x="0" y="0" width="604" height="551">
+	<svg class="Line_2" viewBox="0 0 28 24">
+		<path id="Line_2" d="M 28 0 L 0 24">
+		</path>
+	</svg>
+	<svg class="Rectangle_10">
+		<rect onclick="application.goToTargetView(event)" id="Rectangle_10" rx="29" ry="29" x="0" y="0" width="290" height="80">
 		</rect>
 	</svg>
-	<div id="NEW_INDIA_BANK">
-		<span>NEW INDIA BANK</span>
+	<div id="VIEW">
+		<span>VIEW</span>
 	</div>
-	<div id="INDIAs_FAVOURITE_BANK">
-		<span>INDIA's FAVOURITE BANK</span>
-	</div>
-	<div id="BENEFICIARY">
-		<span>BENEFICIARY</span>
-	</div>
-	<div id="SETTINGS">
-		<span>SETTINGS</span>
-	</div>
-	<div id="ACCOUNT">
-		<span>ACCOUNT</span>
-	</div>
-	<div id="LOGIN">
-		<span>LOGIN</span>
-	</div>
-	<svg class="Rectangle_2">
-		<rect id="Rectangle_2" rx="21" ry="21" x="0" y="0" width="247" height="55">
-		</rect>
-	</svg>
-	<svg class="Rectangle_3">
-		<rect id="Rectangle_3" rx="21" ry="21" x="0" y="0" width="247" height="55">
-		</rect>
-	</svg>
-	<svg class="Rectangle_4">
-		<rect id="Rectangle_4" rx="21" ry="21" x="0" y="0" width="247" height="55">
-		</rect>
-	</svg>
-	<svg class="Rectangle_5">
-		<rect id="Rectangle_5" rx="21" ry="21" x="0" y="0" width="247" height="55">
-		</rect>
-	</svg>
-	<div id="CUSTOMER_NAME">
-		<span>CUSTOMER NAME</span>
-	</div>
-	<div id="ASWIN_B">
-		<span>ASWIN B</span>
-	</div>
-	<div id="LAST_5_TRANSACTIONS">
-		<span>LAST 5 TRANSACTIONS</span>
-	</div>
-	<div id="ZOMATO">
-		<span>ZOMATO</span>
-	</div>
-	<div id="UBER">
-		<span>UBER</span>
-	</div>
-	<div id="MORE_SUPERMARKET">
-		<span>MORE SUPERMARKET</span>
-	</div>
-	<div id="AMAZON">
-		<span>AMAZON</span>
-	</div>
-	<div id="ZOMATO_">
-		<span>ZOMATO</span>
-	</div>
-	<div id="ID152">
-		<span>152</span>
-	</div>
-	<div id="ID54">
-		<span>54</span>
-	</div>
-	<div id="ID102">
-		<span>102</span>
-	</div>
-	<div id="ID214">
-		<span>214</span>
-	</div>
-	<div id="ID124">
-		<span>124</span>
-	</div>
-	<div id="TRANSFER">
-		<span>TRANSFER</span>
-	</div>
-	<div id="ACCOUNT_NUMBER">
-		<span>ACCOUNT NUMBER</span>
-	</div>
-	<div id="ID1020333392">
-		<span>1020333392</span>
-	</div>
-	<svg class="Rectangle_11">
-		<rect id="Rectangle_11" rx="21" ry="21" x="0" y="0" width="447" height="71">
-		</rect>
-	</svg>
 </div>
 </body>
 </html>

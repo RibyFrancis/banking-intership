@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -438,6 +437,23 @@
 
 	}
 
+	a:link, a:visited {
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 19px;
+		background-color: rgba(155,180,69,1);
+		color: black;
+		padding: 14px 25px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+	}
+
+	a:hover, a:active {
+		background-color: rgba(155,180,69,1);
+	}
+
 	.Rectangle_6 {
 		position: absolute;
 		overflow: visible;
@@ -451,8 +467,13 @@
 		--web-action-target: select.html;
 	}
 </style><!---->
-
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "www.google.com";
+    };
+</script>
 </head>
+
 <body>
 <div id="home">
 	<svg class="Rectangle_1">
@@ -535,11 +556,8 @@
 	<div id="VIEW_ALL_CUSTOMERS">
 		<span>VIEW ALL CUSTOMERS</span>
 	</div>
+	<a href="select.php" class="Rectangle_6">VIEW ALL CUSTOMERS</a>
 
-	<svg class="Rectangle_6">
-		<rect onclick="application.showOverlay(event,'select',0,0)" id="Rectangle_6" rx="21" ry="21" x="0" y="0" width="347" height="55">
-		</rect>
-	</svg>
 </div>
 </body>
 </html>
