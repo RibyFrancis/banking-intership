@@ -518,40 +518,122 @@
 		<span>ACCOUNT BALANCE</span>
 	</div>
 	<div id="ID10581">
-		<span>₹10,581</span>
+	<span>₹
+		<?php
+		
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "customer";
+		
+		// Create connection
+		$conn= mysqli_connect($servername,$username,$password,$dbname);
+		// Check connection
+		if (!$conn) {
+		  die("Connection failed: " . mysqli_connect_error());
+		}
+		$sql = "SELECT balance FROM details where accno=1";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
+			// output data of each row
+			while($row = $result->fetch_assoc()) {
+				echo $row["balance"];
+			}
+		} else { echo "not found"; }
+		//$conn->close();
+		?>
+		</span>
 	</div>
 	<div id="LAST_5_TRANSACTIONS">
 		<span>LAST 5 TRANSACTIONS</span>
 	</div>
+	<?php
+		$sql = "SELECT details.name FROM transfer,details where details.accno=transfer.to order by sno desc limit 5";
+		$result = $conn->query($sql);
+	?>
 	<div id="ZOMATO">
-		<span>ZOMATO</span>
+		<span><?php
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+		echo $row["name"];
+		}
+		?></span>
 	</div>
 	<div id="UBER">
-		<span>UBER</span>
+		<span><?php
+		if ($result->num_rows > 1) {
+			$row = $result->fetch_assoc();
+		echo $row["name"];
+		}
+		?></span>
 	</div>
 	<div id="MORE_SUPERMARKET">
-		<span>MORE SUPERMARKET</span>
+		<span><?php
+		if ($result->num_rows > 2) {
+			$row = $result->fetch_assoc();
+		echo $row["name"];
+		}
+		?></span>
 	</div>
 	<div id="AMAZON">
-		<span>AMAZON</span>
+		<span><?php
+		if ($result->num_rows > 3) {
+			$row = $result->fetch_assoc();
+		echo $row["name"];
+		}
+		?></span>
 	</div>
 	<div id="ZOMATO_">
-		<span>ZOMATO</span>
+		<span><?php
+		if ($result->num_rows > 4) {
+			$row = $result->fetch_assoc();
+		echo $row["name"];
+		}
+		?></span>
 	</div>
+	<?php
+	$sql = "SELECT amount FROM transfer order by sno desc limit 5";
+	$result = $conn->query($sql);
+	?>
 	<div id="ID152">
-		<span>152</span>
+		<span><?php
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+		echo $row["amount"];
+		}
+		?></span>
 	</div>
 	<div id="ID54">
-		<span>54</span>
+		<span><?php
+		if ($result->num_rows > 1) {
+			$row = $result->fetch_assoc();
+		echo $row["amount"];
+		}
+		?></span>
 	</div>
 	<div id="ID102">
-		<span>102</span>
+		<span><?php
+		if ($result->num_rows > 2) {
+			$row = $result->fetch_assoc();
+		echo $row["amount"];
+		}
+		?></span>
 	</div>
 	<div id="ID214">
-		<span>214</span>
+		<span><?php
+		if ($result->num_rows > 3) {
+			$row = $result->fetch_assoc();
+		echo $row["amount"];
+		}
+		?></span>
 	</div>
 	<div id="ID124">
-		<span>124</span>
+		<span><?php
+		if ($result->num_rows > 4) {
+			$row = $result->fetch_assoc();
+		echo $row["amount"];
+		}
+		?></span>
 	</div>
 	<div id="VIEW_ALL_CUSTOMERS">
 		<span>VIEW ALL CUSTOMERS</span>

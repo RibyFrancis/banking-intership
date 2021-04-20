@@ -45,17 +45,20 @@
 		fill: rgba(155,180,69,1);
 	}
 	.Path_1 {
-		overflow: visible;
+		font-family: Segoe UI Light;
+		font-size:20px;
+		border: 1px solid black;
+		border-radius:30px;
+
 		position: absolute;
-		width: 206px;
-		height: 55px;
-		left: 61px;
-		top: 754px;
-		transform: matrix(1,0,0,1,0,0);
-		cursor: pointer;
-		--web-animation: fadein 0.3s ease-out;
-		--web-action-type: page;
-		--web-action-target: success.html;
+		overflow: visible;
+		width: 200px;
+		height:50px;
+
+		color: black;
+		background-color:rgba(155,180,69,1);
+		font-size: 30px;
+
 	}
 	#Rectangle_1 {
 		fill: transparent;
@@ -509,11 +512,35 @@
 </style>
 </head>
 <body>
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "customer";
+//from the previous page
+
+// Create connection
+$conn= mysqli_connect($servername,$username,$password,$dbname);
+
+$accno = mysqli_real_escape_string($conn, $_POST['accno']);
+
+// Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+$sql = "SELECT name FROM details where accno=".$accno;
+$result = $conn->query($sql);
+/*
+if ($result->num_rows > 0) {
+	// output data of each row
+	while($row = $result->fetch_assoc()) {
+		echo $row["balance"];
+	}
+} else { echo "not found"; }
+*/
+?>
 <div id="view">
-	<svg class="Path_1" viewBox="0 0 206 55">
-		<path onclick="application.showOverlay(event,'success',0,0)" id="Path_1" d="M 21 0 L 185 0 C 196.5979766845703 0 206 9.402019500732422 206 21 L 206 34 C 206 45.59798049926758 196.5979766845703 55 185 55 L 21 55 C 9.402019500732422 55 0 45.59798049926758 0 34 L 0 21 C 0 9.402019500732422 9.402019500732422 0 21 0 Z">
-		</path>
-	</svg>
+	
 	<svg class="Rectangle_1">
 		<rect id="Rectangle_1" rx="36" ry="36" x="0" y="0" width="604" height="551">
 		</rect>
@@ -556,52 +583,116 @@
 		<span>CUSTOMER NAME</span>
 	</div>
 	<div id="ASWIN_B">
-		<span>ASWIN B</span>
+		<span><?php
+		$row = $result->fetch_assoc();
+		echo $row['name'];
+		?></span>
 	</div>
 	<div id="LAST_5_TRANSACTIONS">
 		<span>LAST 5 TRANSACTIONS</span>
 	</div>
+	<div id="LAST_5_TRANSACTIONS">
+		<span>LAST 5 TRANSACTIONS</span>
+	</div>
+	<?php
+		$sql = "SELECT details.name FROM transfer,details where details.accno=transfer.to order by sno desc limit 5";
+		$result = $conn->query($sql);
+	?>
 	<div id="ZOMATO">
-		<span>ZOMATO</span>
+		<span><?php
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+		echo $row["name"];
+		}
+		?></span>
 	</div>
 	<div id="UBER">
-		<span>UBER</span>
+		<span><?php
+		if ($result->num_rows > 1) {
+			$row = $result->fetch_assoc();
+		echo $row["name"];
+		}
+		?></span>
 	</div>
 	<div id="MORE_SUPERMARKET">
-		<span>MORE SUPERMARKET</span>
+		<span><?php
+		if ($result->num_rows > 2) {
+			$row = $result->fetch_assoc();
+		echo $row["name"];
+		}
+		?></span>
 	</div>
 	<div id="AMAZON">
-		<span>AMAZON</span>
+		<span><?php
+		if ($result->num_rows > 3) {
+			$row = $result->fetch_assoc();
+		echo $row["name"];
+		}
+		?></span>
 	</div>
 	<div id="ZOMATO_">
-		<span>ZOMATO</span>
+		<span><?php
+		if ($result->num_rows > 4) {
+			$row = $result->fetch_assoc();
+		echo $row["name"];
+		}
+		?></span>
 	</div>
+	<?php
+	$sql = "SELECT amount FROM transfer order by sno desc limit 5";
+	$result = $conn->query($sql);
+	?>
 	<div id="ID152">
-		<span>152</span>
+		<span><?php
+		if ($result->num_rows > 0) {
+			$row = $result->fetch_assoc();
+		echo $row["amount"];
+		}
+		?></span>
 	</div>
 	<div id="ID54">
-		<span>54</span>
+		<span><?php
+		if ($result->num_rows > 1) {
+			$row = $result->fetch_assoc();
+		echo $row["amount"];
+		}
+		?></span>
 	</div>
 	<div id="ID102">
-		<span>102</span>
+		<span><?php
+		if ($result->num_rows > 2) {
+			$row = $result->fetch_assoc();
+		echo $row["amount"];
+		}
+		?></span>
 	</div>
 	<div id="ID214">
-		<span>214</span>
+		<span><?php
+		if ($result->num_rows > 3) {
+			$row = $result->fetch_assoc();
+		echo $row["amount"];
+		}
+		?></span>
 	</div>
 	<div id="ID124">
-		<span>124</span>
-	</div>
-	<div id="TRANSFER">
-		<span>TRANSFER</span>
+		<span><?php
+		if ($result->num_rows > 4) {
+			$row = $result->fetch_assoc();
+		echo $row["amount"];
+		}
+		?></span>
 	</div>
 	<div id="ACCOUNT_NUMBER">
 		<span>ACCOUNT NUMBER</span>
 	</div>
 	<div id="ID1020333392">
-		<span>1020333392</span>
+		<span> <?php echo $accno; ?> </span>
 	</div>
-	<form class="Rectangle_11" action="/action_page.php">
+	
+	<form class="Rectangle_11" action="success.php" method="post">
   		<input type="number" id="fname" name="fname"><br><br>
+		<input type="submit" class="Path_1" value="Transfer">
+		<input type="hidden" name="accno" value="<?php echo $accno ?>">
 	</form>
 </div>
 </body>
